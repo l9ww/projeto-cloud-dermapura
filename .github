@@ -1,0 +1,26 @@
+name: Deploy DermaPura One-Page
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH na EC2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd projeto-cloud-dermapura
+            git pull origin main
+            docker build -t dermapura-onepage .
+            docker stop dermapura || true
+            docker rm dermapura || true
+            docker run -d -p 80:80 --name dermapura --restart always dermapura-onepage
