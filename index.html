@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DermaPura Cosméticos — Beleza com Ciência e Conformidade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --plum:#7a4d8c; --plum-d:#5d3a6c; --petal:#f3e9f5;
+    --ink:#231a2a; --mut:#6c6173; --line:#e7dcec; --bg:#ffffff; --soft:#faf6fb;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.65;overflow-x:hidden}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+  h1,h2,h3,.dsp{font-family:"Newsreader",Georgia,serif;line-height:1.12;font-weight:500}
+  a{color:inherit;text-decoration:none}
+  nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:"Newsreader";font-size:1.3rem;color:var(--plum-d);font-weight:600}
+  .drop{width:30px;height:30px;color:var(--plum)}
+  .nav-links{display:flex;gap:32px;font-size:.9rem;font-weight:500;color:var(--mut)}
+  .nav-links a:hover{color:var(--plum)}
+  @media(max-width:780px){.nav-links{display:none}}
+  header{padding:120px 0 110px;background:linear-gradient(180deg,#ffffff 0%,var(--soft) 100%);position:relative;overflow:hidden}
+  .ring{position:absolute;border:1px solid #e7d3ec;border-radius:50%}
+  .r1{width:560px;height:560px;top:-200px;right:-180px}
+  .r2{width:360px;height:360px;top:-100px;right:-80px;border-color:#efe0f2}
+  header .wrap{position:relative;text-align:center}
+  .tag{display:inline-block;color:var(--plum);background:var(--petal);font-weight:600;font-size:.8rem;
+    letter-spacing:.06em;padding:8px 18px;border-radius:999px;margin-bottom:28px}
+  header h1{font-size:clamp(2.6rem,6vw,4.8rem);max-width:14ch;margin:0 auto}
+  header h1 em{color:var(--plum);font-style:italic}
+  .lede{max-width:560px;margin:26px auto 38px;color:var(--mut);font-size:1.1rem}
+  .cta{display:inline-flex;gap:9px;background:var(--plum);color:#fff;font-weight:600;font-size:.92rem;
+    padding:15px 30px;border-radius:10px;transition:.2s}
+  .cta:hover{background:var(--plum-d);transform:translateY(-2px)}
+  .ghost{margin-left:12px;color:var(--plum);font-weight:600}
+  .reveal{opacity:0;transform:translateY(22px);animation:rise 1s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .stats{border-block:1px solid var(--line);background:#fff}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+  .st{padding:34px 24px;text-align:center;border-right:1px solid var(--line)}
+  .st:last-child{border:none}
+  .st b{font-family:"Newsreader";font-size:2.2rem;color:var(--plum-d);display:block}
+  .st small{color:var(--mut);font-size:.82rem}
+  @media(max-width:820px){.stats .wrap{grid-template-columns:repeat(2,1fr)} .st:nth-child(2){border-right:none}}
+  section{padding:92px 0}
+  .eyebrow{color:var(--plum);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;margin-bottom:12px}
+  h2{font-size:clamp(1.9rem,4.2vw,3rem);margin-bottom:16px}
+  .lead{color:var(--mut);max-width:660px;font-size:1.05rem}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+  @media(max-width:880px){.grid3{grid-template-columns:1fr}}
+  .card{background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:32px;transition:.25s}
+  .card:hover{border-color:var(--plum);transform:translateY(-4px)}
+  .card h3{font-size:1.25rem;margin-bottom:8px;color:var(--plum-d)}
+  .card p{color:var(--mut);font-size:.95rem}
+  .band{background:var(--petal);border-radius:26px;padding:64px 56px;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+  @media(max-width:880px){.band{grid-template-columns:1fr;padding:38px}}
+  .band h2{color:var(--plum-d)}
+  .band ul{list-style:none;margin-top:14px}
+  .band li{padding:11px 0;border-bottom:1px solid #e3d1e8;color:var(--mut);display:flex;gap:10px}
+  .band li::before{content:"✓";color:var(--plum);font-weight:700}
+  .num3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+  @media(max-width:880px){.num3{grid-template-columns:1fr}}
+  footer{background:#241a2b;color:#d8cadf;padding:64px 0 0}
+  .fgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:34px;padding-bottom:46px}
+  @media(max-width:760px){.fgrid{grid-template-columns:1fr}}
+  footer h4{font-family:"Newsreader";color:#d9aee8;font-size:1.05rem;margin-bottom:14px}
+  footer p,footer a{display:block;font-size:.92rem;margin-bottom:7px;color:#c2b3cb}
+  .infra{border-top:1px solid #3a2c44;background:#1a1220;font-family:"IBM Plex Sans";font-size:.82rem}
+  .infra .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;padding:15px 32px;color:#a695b0}
+  .badge{background:#d9aee8;color:#3a1f47;padding:3px 11px;border-radius:6px;font-weight:700}
+  .dot{width:8px;height:8px;border-radius:50%;background:#7fe6a0;display:inline-block;margin-right:7px;box-shadow:0 0 8px #7fe6a0;animation:bl 1.6s infinite}
+  @keyframes bl{50%{opacity:.35}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="brand">
+    <svg class="drop" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2s7 8 7 13a7 7 0 11-14 0c0-5 7-13 7-13zm0 6c-2 2.5-3 4.3-3 6a3 3 0 003 3z"/></svg>
+    DermaPura Cosméticos
+  </div>
+  <div class="nav-links"><a href="#quem">Quem somos</a><a href="#qual">Qualidade</a><a href="#fab">Fábrica smart</a><a href="#contato">Contato</a></div>
+</div></nav>
+
+<header>
+  <div class="ring r1"></div><div class="ring r2"></div>
+  <div class="wrap reveal">
+    <span class="tag">Skincare & higiene pessoal · 24 anos</span>
+    <h1>Ciência que vira <em>cuidado</em>.</h1>
+    <p class="lede">Fabricante nacional de cosméticos e produtos de higiene pessoal que produz 95 itens de skincare e cuidados diários, sob rigor regulatório e rastreabilidade de lote. Cabreúva, São Paulo.</p>
+    <a href="#qual" class="cta">Compromisso com a qualidade →</a><a href="#fab" class="ghost">Conheça a fábrica</a>
+  </div>
+</header>
+
+<div class="stats"><div class="wrap">
+  <div class="st"><b>95</b><small>produtos no portfólio</small></div>
+  <div class="st"><b>540</b><small>colaboradores</small></div>
+  <div class="st"><b>9 países</b><small>atendidos</small></div>
+  <div class="st"><b>R$ 540mi</b><small>receita anual</small></div>
+</div></div>
+
+<section id="quem"><div class="wrap">
+  <div class="eyebrow">Quem somos</div>
+  <h2>Beleza acessível, padrão internacional</h2>
+  <p class="lead">Há 24 anos no mercado, atendemos o Brasil e exportamos para 9 países da América Latina, sempre sob as Boas Práticas de Fabricação de cosméticos da Anvisa (RDC vigente).</p>
+  <div class="grid3">
+    <div class="card"><h3>Skincare & higiene</h3><p>Portfólio de 95 apresentações, do desenvolvimento de fórmula ao registro, com estabilidade comprovada.</p></div>
+    <div class="card"><h3>Rastreabilidade</h3><p>Identificação e rastreabilidade por lote de cada produto, da linha de envase ao consumidor.</p></div>
+    <div class="card"><h3>Exportação</h3><p>Presença consolidada em 9 países, com documentação e validação aceitas internacionalmente.</p></div>
+  </div>
+</div></section>
+
+<section id="qual"><div class="wrap">
+  <div class="band">
+    <div>
+      <div class="eyebrow">Qualidade & conformidade</div>
+      <h2>O rigor é parte da fórmula</h2>
+      <p class="lead">Cada sistema que toca a produção passa por validação documentada (CSV). Confiabilidade não é opcional em cosméticos.</p>
+      <ul>
+        <li>Boas Práticas de Fabricação (Anvisa)</li>
+        <li>Validação de sistemas computadorizados</li>
+        <li>Registros de lote eletrônicos (batch records)</li>
+        <li>Disponibilidade do MES em 98,1%</li>
+      </ul>
+    </div>
+    <div class="num3" style="grid-template-columns:1fr">
+      <div class="card"><h3>98,1%</h3><p>Disponibilidade do MES de produção.</p></div>
+      <div class="card"><h3>140</h3><p>Procedimentos operacionais padrão (POPs) ativos.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="fab"><div class="wrap">
+  <div class="eyebrow">Fábrica smart</div>
+  <h2>Automação a serviço da segurança</h2>
+  <p class="lead">Uma nova planta com R$ 70 milhões investidos: linha de envase automatizada com 48 PLCs, SCADA dedicado e MES integrado ao ERP corporativo.</p>
+  <div class="num3">
+    <div class="card"><h3>48 PLCs</h3><p>na linha de envase totalmente automatizada.</p></div>
+    <div class="card"><h3>R$ 70mi</h3><p>investidos na nova fábrica inteligente.</p></div>
+    <div class="card"><h3>50%</h3><p>registros de lote já digitais (e crescendo).</p></div>
+  </div>
+</div></section>
+
+<footer id="contato">
+  <div class="wrap fgrid">
+    <div><h4>DermaPura Cosméticos</h4><p>Fabricante nacional de cosméticos e higiene pessoal, comprometida com qualidade, conformidade e segurança do consumidor.</p><p>Cabreúva · São Paulo · Brasil</p></div>
+    <div><h4>Atuação</h4><a>Mercado brasileiro</a><a>Exportação · 9 países</a></div>
+    <div><h4>Contato</h4><a>contato@dermapura.exemplo</a><a>+55 11 0000-0000</a></div>
+  </div>
+  <div class="infra"><div class="wrap">
+    <span><span class="dot"></span>Servido por <span class="badge" id="host">web-srv-01</span></span>
+    <span>Uptime: <span id="up">00:00:00</span></span>
+    <span>DermaPura Cosméticos · ambiente de demonstração</span>
+  </div></div>
+</footer>
+
+<script>
+  /* >>> ALUNO: altere INSTANCE_LABEL em CADA instância EC2 para visualizar o Auto Scaling pelo balanceador <<< */
+  const INSTANCE_LABEL = "ec2-dermapura-aws";
+  document.getElementById("host").textContent = INSTANCE_LABEL;
+  document.title = "DermaPura Cosméticos · " + INSTANCE_LABEL;
+  const t0=Date.now();
+  setInterval(()=>{const s=(Date.now()-t0)/1000|0;
+    document.getElementById("up").textContent=
+    [s/3600|0,s/60%60|0,s%60].map(n=>String(n).padStart(2,'0')).join(':');},1000);
+</script>
+</body>
+</html>
